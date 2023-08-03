@@ -1,0 +1,19 @@
+name: Checkmarx Scan Test
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  checkmarx-scan:
+    runs-on: Windows 11
+    steps:
+      - uses: checkmarx-ts/checkmarx-github-action@v1
+        with:
+          cxone_server: https://ind.ast.checkmarx.net/applicationsAndProjects
+          cxone_username: nfr_rah_infotech
+          cxone_password: Wsspdude12345!
+          project_name: Fusion-Shopping-App--Shipping
